@@ -24,20 +24,22 @@
 
 ## ideas and such
 
+### Nordic'ish
 
+- a good analysis of AMOC (not only maximum but meridional sections), mass transport across key domains (Denmark strait, Bering Strait +++), and transport of heat, salt and other tracers, historical trends of the last 20 years (temperature, mixed layer depth), process based evaluations (EOFs) what is the dominant mode of variability and how that is related to NAO,  Nordic Seas observations are sparse but the time series often long, monthly observations
+
+- Nordic specific observation dataset on flux measurments which can be included, and validation from other model simulations. 
+
+- selecting models for downscaling, polar regions, NAO, geopotential heights index, many oscillations and modes -> circulation indices, scandinavian blocking and blocking in general
+
+### general
 - get a quick overview of the data
 
 - focusing on land and land - atmosphere interactions. Climate extremes e.g. rain on snow,  drought defined by soil moisture.  
 
 - Snow and vegetation (e.g., LAI, GPP) related analysis will be useful. 
 
-- Nordic specific observation dataset on flux measurments which can be included, and validation from other model simulations. 
-
-- a good analysis of AMOC (not only maximum but meridional sections), mass transport across key domains (Denmark strait, Bering Strait +++), and transport of heat, salt and other tracers, historical trends of the last 20 years (temperature, mixed layer depth), process based evaluations (EOFs) what is the dominant mode of variability and how that is related to NAO,  Nordic Seas observations are sparse but the time series often long, monthly observations
-
 - working on cloud feedback in the extra tropics and emergent constraints, 
-
-- selecting models for downscaling, polar regions, NAO, geopotential heights index, many oscillations and modes -> circulation indices, scandinavian blocking and blocking in general
 
 - decadal prediction, initialize ocean and sea ice, AMOC, many ensembles, large assessments, random selection and statistical tools for decadal predictions, obs data: sea-ice concentration, thickness, cloud data
 
