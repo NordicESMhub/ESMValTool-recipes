@@ -1,5 +1,73 @@
+# ESMValTool
+# recipe_albedolandcover.yml
+---
+documentation:
+  title: Evaluation of ch4
+  description: |
+    This recipe analyzes the methane in
+    in CMIP6 models
 
-variables:
-  wetlandCH4
-  fch4_wetl_npp
-  
+  authors:
+    #- jarmo
+    - bergman_tommi
+
+datasets:
+  - {dataset: CESM2,  project: CMIP6,  mip: Emon,  exp: historical,  ensemble: r11i1p1f1,  start_year: 2001, grid: gn, end_year: 2005}
+  - {dataset: UKESM1-0-LL,  project: CMIP6,  mip: Emon,  exp: historical,  ensemble: r11i1p1f2,  start_year: 2001, grid: gn, end_year: 2005}
+  #does not work: - {dataset: CESM2,  exp: historical,  ensemble: r11i1p1f1}
+
+preprocessors:
+
+preprocessors:
+  regrid_nyt:
+    regrid:
+      target_grid: 1x1
+      scheme: linear
+    annual_statistics:
+      operator: mean
+
+  boreal_timeseries:
+    #annual_statistics:
+    #  operator: mean
+    area_statistics:
+      operator: mean
+    extract_region:
+      start_latitude: 45
+      end_latitude: 80
+      start_longitude: 0
+      end_longitude: 359
+
+
+
+diagnostics:
+  methane_diagnostic_map:
+    description: methane_diag
+    variables:
+      wetlandCH4_map:
+        short_name: wetlandCH4
+        preprocessor: regrid_nyt
+    scripts:
+      test:
+        script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_test.py
+        title: "diagnostic of wetlandCH4"
+        quickplot:
+          plot_type: polar
+          vmin: -1e-9
+          vmax: 10e-9
+          #,levels=np.linspace(-1e-9,10e-9,7))#
+
+  methane_diagnostic_ts:
+    description: methane_diag_ts
+    variables:
+      wetlandCH4_timeseries:
+        short_name: wetlandCH4
+        preprocessor: boreal_timeseries
+    scripts:
+      ts:
+        script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_test.py
+        title: "diagnostic of wetlandCH4"
+        quickplot:
+          plot_type: times
+          vmin: -1e-9
+          vmax: 10e-9
+                  #,levels=np.linspace(-1e-9,10e-9,7))#
