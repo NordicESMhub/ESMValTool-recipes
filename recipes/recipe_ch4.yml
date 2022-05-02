@@ -12,11 +12,12 @@ documentation:
     - bergman_tommi
 
 datasets:
-  - {dataset: CESM2,  project: CMIP6,  mip: Emon,  exp: historical,  ensemble: r11i1p1f1,  start_year: 2001, grid: gn, end_year: 2005}
-  - {dataset: UKESM1-0-LL,  project: CMIP6,  mip: Emon,  exp: historical,  ensemble: r11i1p1f2,  start_year: 2001, grid: gn, end_year: 2005}
+  - {dataset: CESM2,  project: CMIP6,    exp: historical,  ensemble: r11i1p1f1,  start_year: 2001, grid: gn, end_year: 2005}
+  - {dataset: UKESM1-0-LL,  project: CMIP6,   exp: historical,  ensemble: r11i1p1f2,  start_year: 2001, grid: gn, end_year: 2005}
+#  - {dataset: CESM2,  project: CMIP6,  mip: Emon,  exp: historical,  ensemble: r11i1p1f1,  start_year: 2001, grid: gn, end_year: 2005}
+#  - {dataset: UKESM1-0-LL,  project: CMIP6,  mip: Emon,  exp: historical,  ensemble: r11i1p1f2,  start_year: 2001, grid: gn, end_year: 2005}
   #does not work: - {dataset: CESM2,  exp: historical,  ensemble: r11i1p1f1}
 
-preprocessors:
 
 preprocessors:
   regrid_nyt:
@@ -27,12 +28,23 @@ preprocessors:
       operator: mean
 
   boreal_timeseries:
-    #annual_statistics:
-    #  operator: mean
+    monthly_statistics:
+      operator: sum
+    area_statistics:
+      operator: sum
+    extract_region:
+      start_latitude: 50
+      end_latitude: 80
+      start_longitude: 0
+      end_longitude: 359
+
+  boreal_mean_timeseries:
+    monthly_statistics:
+      operator: mean
     area_statistics:
       operator: mean
     extract_region:
-      start_latitude: 45
+      start_latitude: 50
       end_latitude: 80
       start_longitude: 0
       end_longitude: 359
@@ -41,33 +53,50 @@ preprocessors:
 
 diagnostics:
   methane_diagnostic_map:
-    description: methane_diag
+    description: Polar map of multiyear mean of wetland ch4 emissions
     variables:
       wetlandCH4_map:
         short_name: wetlandCH4
+        mip: Emon
         preprocessor: regrid_nyt
     scripts:
-      test:
+      polar_map:
         script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_test.py
-        title: "diagnostic of wetlandCH4"
+        title: "Polar map of wetlandCH4"
         quickplot:
           plot_type: polar
           vmin: -1e-9
           vmax: 10e-9
           #,levels=np.linspace(-1e-9,10e-9,7))#
 
-  methane_diagnostic_ts:
-    description: methane_diag_ts
+  methane_diagnostic_timeseries:
+    description: Timeseries of wetland ch4 emissions
     variables:
       wetlandCH4_timeseries:
         short_name: wetlandCH4
+        mip: Emon
         preprocessor: boreal_timeseries
     scripts:
-      ts:
+      timeseries:
         script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_test.py
         title: "diagnostic of wetlandCH4"
         quickplot:
           plot_type: times
-          vmin: -1e-9
-          vmax: 10e-9
-                  #,levels=np.linspace(-1e-9,10e-9,7))#
+
+  methane_diagnostic_temperature:
+    description: Monthly wetland ch4 emissions depending on temperature
+    variables:
+      wetlandCH4_scatter:
+        short_name: wetlandCH4
+        mip: Emon
+        preprocessor: boreal_timeseries
+      tas:
+        short_name: tas
+        mip: Amon
+        preprocessor: boreal_mean_timeseries
+    scripts:
+      scatter:
+        script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_test.py
+        title: "Scatterplot of wetlandCH4 dependence on temperature"
+        quickplot:
+          plot_type: scatter
