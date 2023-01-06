@@ -1,0 +1,30 @@
+# Distribution / packaging
+.Python
+build/
+*.egg-info/
+.installed.cfg
+*.egg
+*.orig
+*.tmp
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Created by editors
+*~
+\#*
+\.\#*
+*.swp
+
+# Created by PyCharm
+.idea/
+
+#pytest
+.cache
+.pytest_cache
+
+# Data files
+*.nc
+*.nc4
