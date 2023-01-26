@@ -1,19 +1,20 @@
 # ESMValTool
-# recipe_albedolandcover.yml
+# recipe_wetland_ch4.yml
 ---
 documentation:
-  title: Evaluation of ch4
+  title: Evaluation of wetland emissions of ch4
   description: |
-    This recipe analyzes the methane in
+    This recipe analyzes the wetland methane emissions in
     in CMIP6 models
 
   authors:
     #- jarmo
-    - bergman_tommi
+    - tommi_bergman
 
 datasets:
-  - {dataset: CESM2,  project: CMIP6,    exp: historical,  ensemble: r11i1p1f1,  start_year: 2001, grid: gn, end_year: 2005}
+  #- {dataset: CESM2,  project: CMIP6,    exp: historical,  ensemble: r1i1p1f1,  start_year: 2001, grid: gn, end_year: 2005}
   - {dataset: UKESM1-0-LL,  project: CMIP6,   exp: historical,  ensemble: r11i1p1f2,  start_year: 2001, grid: gn, end_year: 2005}
+  - {dataset: NorESM2-MM,  project: CMIP6,   exp: historical,  ensemble: r1i1p1f1,  start_year: 2001, grid: gn, end_year: 2005}
 #  - {dataset: CESM2,  project: CMIP6,  mip: Emon,  exp: historical,  ensemble: r11i1p1f1,  start_year: 2001, grid: gn, end_year: 2005}
 #  - {dataset: UKESM1-0-LL,  project: CMIP6,  mip: Emon,  exp: historical,  ensemble: r11i1p1f2,  start_year: 2001, grid: gn, end_year: 2005}
   #does not work: - {dataset: CESM2,  exp: historical,  ensemble: r11i1p1f1}
@@ -70,7 +71,7 @@ diagnostics:
         preprocessor: regrid_nyt
     scripts:
       polar_map:
-        script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_ch4.py
+        script: wetland_ch4/ch4_analysis.py
         title: "Polar map diagnostic of wetlandCH4"
         quickplot:
           plot_type: polar
@@ -87,7 +88,7 @@ diagnostics:
         preprocessor: boreal_timeseries
     scripts:
       timeseries:
-        script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_ch4.py
+        script: wetland_ch4/ch4_analysis.py
         title: "Timeseries diagnostic of wetlandCH4"
         quickplot:
           plot_type: times
@@ -105,7 +106,7 @@ diagnostics:
         preprocessor: boreal_mean_timeseries
     scripts:
       scatter:
-        script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_ch4.py
+        script: wetland_ch4/ch4_analysis.py
         title: "Scatterplot diagnostic of wetlandCH4 dependence on temperature"
         quickplot:
           plot_type: scatter
@@ -121,7 +122,7 @@ diagnostics:
         preprocessor: boreal_select
     scripts:
       seasonal:
-        script: /Users/bergmant/Documents/projects/nicest2/esmvaltool/ESMValTool-recipes/diag_scripts/ch4/plot_ch4.py
+        script: wetland_ch4/ch4_analysis.py
         title: "Seasonal diagnostic of wetlandCH4"
         quickplot:
           plot_type: times
