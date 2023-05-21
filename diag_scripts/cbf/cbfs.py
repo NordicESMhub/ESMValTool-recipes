@@ -42,7 +42,7 @@ def load_data(fn,vn):
         sys.exit()
     
     # Check data dimensions and extract coord names and dims
-    coords = [coord.name() for coord in cube.coords()]
+    coords = [coord.name() for coord in cube.coords(dim_coords=True)]
     if len(coords) != 3:
         print('Data field has more than three dimensions. Should have latitude, longitude, and time.')
         sys.exit()
@@ -56,8 +56,10 @@ def load_data(fn,vn):
         cube.coord(ltcoord).points = np.flip(cube.coord(ltcoord).points, 0)
    
     # Guess latitude and longitude boundaries
-    cube.coord(ltcoord).guess_bounds()
-    cube.coord(lncoord).guess_bounds()
+    if not cube.coord(ltcoord).has_bounds():
+        cube.coord(ltcoord).guess_bounds()
+    if not cube.coord(lncoord).has_bounds():
+        cube.coord(lncoord).guess_bounds()
 
     return cube, [tcoord, ltcoord, lncoord]
 
