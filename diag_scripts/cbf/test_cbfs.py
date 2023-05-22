@@ -35,12 +35,12 @@ import cbfs
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import matplotlib
-import iris.plot as iplt
+#import iris.plot as iplt
 
 warnings.filterwarnings('ignore')
 
 #FolderName = '/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_test_20230104_132431/preproc/map/psl'
-FolderName = '~/diagnostics/NICEST2/CommonBasisFunction/Data/'
+FolderName = '~/projects/NICEST2/Data/misc/'
 seasons = ['djf', 'mam', 'jja', 'son']
 iseas = 1
 obsFileName = 'era20c_psl_1900_2010_nh_'

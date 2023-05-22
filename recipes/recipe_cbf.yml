@@ -2,9 +2,10 @@
 # recipe_python.yml
 ---
 documentation:
-  title: common basis function
+  title: common base function
+
   description: 
-    Example recipe that calculate and plot the common basis function.
+    Example recipe that calculate and plot the common base function.
 
   authors:
     - andela_bouwe
@@ -26,15 +27,25 @@ datasets:
 
 preprocessors:
 
-  select_seasons:
+  prepare_map:
     extract_season:
       season: mam
+    regrid:
+      target_grid: 1x1
+      lon_offset: False
+      lat_offset: False
+      scheme: linear
+    extract_region:
+      start_latitude: 20
+      end_latitude: 90
+      start_longitude: 0
+      end_longitude: 359
 
 diagnostics:
 
   map:
-    title: common basis function
-    description: calculate and plot multiple models common basis function
+    title: common base function
+    description: calculate and plot multiple models common base function
     themes:
       - phys
     realms:
@@ -43,12 +54,17 @@ diagnostics:
       psl:
         short_name: psl
         mip: Amon
-        preprocessor: select_seasons
-        start_year: 1900
+        preprocessor: prepare_map
+        reference_dataset: ERA-20C
+        start_year: 1950
         end_year: 2010
+        thresholds: [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10]
+        #extents: [-120, 120, 20, 90]
+    additional_datasets:
+        - {dataset: ERA-20C, project: OBS6, type: reanaly, version: 1, tier: 3}
     scripts:
       script1:
-        script: cbf/test_cbfs.py
+        script: /nird/home/yanchun/projects/NICEST2/diag_scripts/cbf/diag_cbfs.py
         quickplot:
           plot_type: pcolormesh
           cmap: Reds
