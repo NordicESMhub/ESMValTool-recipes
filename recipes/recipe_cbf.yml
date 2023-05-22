@@ -64,7 +64,7 @@ diagnostics:
         - {dataset: ERA-20C, project: OBS6, type: reanaly, version: 1, tier: 3}
     scripts:
       script1:
-        script: /nird/home/yanchun/projects/NICEST2/diag_scripts/cbf/diag_cbfs.py
+        script: ../diag_scripts/cbf/diag_cbfs.py
         quickplot:
           plot_type: pcolormesh
           cmap: Reds
