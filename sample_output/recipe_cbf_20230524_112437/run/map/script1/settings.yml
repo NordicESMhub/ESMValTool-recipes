@@ -1,0 +1,18 @@
+auxiliary_data_dir: /projects/NS9252K/share/esmvaltool/auxiliary_data
+input_files:
+- /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/metadata.yml
+log_level: info
+output_file_type: png
+plot_dir: /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/plots/map/script1
+quickplot:
+  cmap: RdBu
+  plot_type: pcolormesh
+realms:
+- atmos
+recipe: recipe_cbf.yml
+run_dir: /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/map/script1
+script: script1
+themes:
+- phys
+version: 2.8.0
+work_dir: /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1
