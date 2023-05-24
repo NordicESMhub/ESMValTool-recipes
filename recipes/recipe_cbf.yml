@@ -2,10 +2,10 @@
 # recipe_python.yml
 ---
 documentation:
-  title: common base function
+  title: Common Base Function Analysis for CMIP Models
 
   description: 
-    Example recipe that calculate and plot the common base function.
+    Example recipe that calculate and plot the Common Base Function.
 
   authors:
     - andela_bouwe
@@ -58,13 +58,11 @@ diagnostics:
         reference_dataset: ERA-20C
         start_year: 1950
         end_year: 2010
-        thresholds: [-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10]
-        #extents: [-120, 120, 20, 90]
     additional_datasets:
         - {dataset: ERA-20C, project: OBS6, type: reanaly, version: 1, tier: 3}
     scripts:
       script1:
-        script: ../diag_scripts/cbf/diag_cbfs.py
+        script: ~/projects/NICEST2/diag_scripts/cbf/diag_cbfs.py
         quickplot:
           plot_type: pcolormesh
-          cmap: Reds
+          cmap: RdBu

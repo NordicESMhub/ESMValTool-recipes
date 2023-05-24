@@ -35,7 +35,6 @@ import matplotlib
 import logging
 from pathlib import Path
 from pprint import pformat
-import pprint
 
 import iris
 import iris.cube 
@@ -75,136 +74,143 @@ def get_provenance_record(attributes, ancestor_files):
     }
     return record
 
-def compute_diagnostic(cfg):
-    # Get a description of the preprocessed data that we will use as input.
-    input_data = cfg['input_data'].values()
+def compute_eof(cfg):
+    """ compute_eof """
+    obs_fn=cfg['filename']
+    obs_vn=cfg['short_name']
+    odat, ocoord = cbfs.load_data(obs_fn, obs_vn)
+    eof,eof_perc = cbfs.calc_eof(odat, ocoord, nmode=1)
 
-    selection = select_metadata(input_data, short_name='psl', dataset='ERA-20C')
-    logger.info("Select observational dataset:\n%s",
-                pformat(selection))
-    obs_fn=selection[0]['filename']
-    obs_vn=selection[0]['short_name']
+    return odat, ocoord, eof, eof_perc
 
-    # Demonstrate use of metadata access convenience functions.
-    selections = select_metadata(input_data, short_name='psl',activity='CMIP')
-    logger.info("Select model dataset:\n%s",
-                pformat(selection))
+def compute_cbf(odat, ocoord, eof, cfg):
+    """ compute_cbf """
+    model_fn = cfg['filename']
+    model_vn = cfg['short_name']
+    mdat, mcoord = cbfs.load_data(model_fn, model_vn)
 
-    model_vn=selection[0]['short_name']
+    if (mdat.coord(mcoord[1]).shape[0], mdat.coord(mcoord[2]).shape[0]) != (odat.coord(ocoord[1]).shape[0], odat.coord(ocoord[2]).shape[0]):
+        print('Observations and model have different latitude and longitudes for model_fn {}. Models must use same spatial grid as observations. Recommend re-gridding model data with CDO.'.format(model_fn[ii]))
+        print('Skipping this model.')
+        return
 
-    model_fn=[]
-    datasets=[]
-    for selection in selections:
-        model_fn.append(selection['filename'])
-        datasets.append(selection['alias'])
+    cbf_temp,perc_temp = cbfs.calc_cbf(mdat, eof, mcoord)
+    cbf = cbf_temp.copy()
+    cbf_perc = perc_temp
+    return mdat, mcoord, cbf, cbf_perc
 
-    cbf,cbf_perc,eof,eof_perc = cbfs.cbfs(model_fn, model_vn, obs_fn, obs_vn, 1)
-    odat,ocoord = cbfs.load_data(obs_fn,obs_vn)
+def save_text(basename, provenance_record, cfg, data):
+    """Save the scalar data to a text file.
 
-    #print('Percentage variance explained for EOF is {0:5.3}%, and for CBF is {1}%.'.format(eof_perc.data,
-        #[int(i*100)/100 for i in cbf_perc.data]))
+    Parameters
+    ----------
+    basename: str
+        Base name for saving the data into text file
+    provenance_record: dict
+        Provenance record for the data
+    cfg: dict
+        Dictionary with diagnostic configuration.
+    data: numpy arrary
+        Scalar to save.
 
-    input_file=model_fn
-    attrs={'long_name':'cbf of psl','start_year':1950,'end_year':2010,'dataset':'CMIP models'}
-    provenance_record = get_provenance_record(
-        attrs, ancestor_files=model_fn)
+    See Also
+    --------
+    ProvenanceLogger: For an example provenance record that can be used
+        with this function.
+    """
 
-    basename = 'diag_cbfs'
-    #basename = 'diag_cbfs.'+cfg['output_file_type']
-    cbf_dict={'datasets':datasets,
-            'cbf':cbf,'cbf_perc':cbf_perc,'eof':eof,'eof_perc':eof_perc,
-            'odat':odat,'ocoord':ocoord}
+    print('Percentage variance explained by EOF/CBF for {0} is {1:5.3}%.'.format(basename, data))
 
-    filename = get_diagnostic_filename(basename, cfg)
-    logger.info("Saving analysis results to %s", filename)
-    #iris.save(cube, target=filename, **kwargs)
-    #with ProvenanceLogger(cfg) as provenance_logger:
-        #provenance_logger.log(filename, provenance_record)
+    filename = get_diagnostic_filename(basename, cfg, extension='txt')
+    logger.info("Saving variance contribution to %s", filename)
 
-    #cubes = iris.cube.CubeList([cbf,cbf_perc,eof,eof_perc])
-    #save_data(basename, provenance_record, cfg, cubes)
-
-    #iris.save(cubes,'/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230519_092454/work/map/script1/cbf_data.nc')
-    #output_file = '/path/to/result.nc'
-    #with ProvenanceLogger(cfg) as provenance_logger:
-        #provenance_logger.log(output_file, provenance_record)
-    #"""Compute an example diagnostic."""
-    #logger.debug("Loading %s", filename)
-    #cube = iris.load_cube(filename)
-    return provenance_record, cbf_dict
+    # save data to text file
+    with open(filename, 'w') as file:
+        file.write(str(data))
+        
+    with ProvenanceLogger(cfg) as provenance_logger:
+        provenance_logger.log(filename, provenance_record)
 
 
-#def plot_diagnostic(cube, basename, provenance_record, cfg):
-    #"""Create diagnostic data and plot it."""
+def plot_diagnostic(basename, provenance_record, cfg, cube):
+    """Create diagnostic data and plot it."""
 
-    # Save the data used for the plot
-    #save_data(basename, provenance_record, cfg, cube)
-#
-    #if cfg.get('quickplot'):
+    if cfg.get('quickplot'):
         # Create the plot
-        #quickplot(cube, **cfg['quickplot'])
+        quickplot(cube, **cfg['quickplot'])
+        plt.gca().coastlines()
         # And save the plot
-        #save_figure(basename, provenance_record, cfg)
+        save_figure(basename, provenance_record, cfg)
 
 
-def plot_diagnostic(cbf_dict, basename, provenance_record, cfg):
-    """ Create plot """
+def plot_diagnostic2(basename, provenance_record, cfg, cube):
+    """
+    Create diagnostic data and plot it.
+    Similar as plot_diagnostic, but use direclty matplotlib pyplot
+    """
 
     proj = ccrs.PlateCarree(central_longitude=0.0)
 
-    eof = np.asarray(cbf_dict['eof'].data)
+    data = np.asarray(cube.data)
     clevs = np.linspace(-10, 10, 21)
     extents = [-120, 120, 20, 90]
-    lon = cbf_dict['odat'].coord('longitude').points
-    lat = cbf_dict['odat'].coord('latitude').points
+    lat = cube.coord('latitude').points
+    lon = cube.coord('longitude').points
 
-    cbf=cbf_dict['cbf']
-    ncbf = np.shape(cbf)[0]
+    ax = plt.subplot(projection=proj)
+    ax.coastlines()
+    ax.set_global()
+    plot=ax.contourf(lon, lat, data[:,:]/100, levels=clevs, cmap=plt.cm.RdBu_r, transform=proj)
+    ax.axis(extents)
+    ax.set_title(basename)
 
-    input_data = cfg['input_data'].values()
-    selection = select_metadata(input_data, short_name='psl', dataset='ERA-20C')
-
-    ax1 = plt.subplot(1+ncbf, 1, 1, projection=proj)
-    ax1.coastlines()
-    ax1.set_global()
-    ax1.contourf(lon, lat, eof[:,:]/100, levels=clevs, cmap=plt.cm.RdBu_r, transform=proj)
-    ax1.axis(extents)
-    ax1.set_title(selection[0]['dataset'])
-
-    # Demonstrate use of metadata access convenience functions.
-    selections = select_metadata(input_data, short_name='psl',activity='CMIP')
-    #print(selections)
-
-    for n in range(0,ncbf):
-        cbf_plot = cbf_dict['cbf'][n,:,:].copy()
-
-        ax = plt.subplot(1+ncbf, 1, 2+n, projection=proj)
-        ax.coastlines()
-        ax.set_global()
-        cs = ax.contourf(lon, lat, cbf_plot[:,:]/100, levels=clevs, cmap=plt.cm.RdBu_r, transform=proj)
-        ax.axis(extents)
-        ax.set_title(selections[n]['dataset']+'_'+selections[n]['ensemble'])
-
-    f1 = plt.gcf()
-    #f1.subplots_adjust(right=0.85)
-    f1.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9, hspace=1.0, wspace=0.3)
-    cbar_ax = f1.add_axes([0.7, 0.18, 0.02, 0.65])
-    f1.colorbar(cs, cax=cbar_ax)
+    cbar = plt.colorbar(plot,orientation='horizontal',label='EOF spatial correlation')
 
     save_figure(basename, provenance_record, cfg)
 
 def main(cfg):
+    """
+    Compute EOF or CBF for each input dataset.
+    Save the data and plots.
+    """
 
-    """ Compute EOFs of observation and CBFs of models """
-    provenance_record, cbf_dict = compute_diagnostic(cfg)
+    # Get a description of the preprocessed data that we will use as input.
+    input_data = cfg['input_data'].values()
 
-    basename = 'diag_cbfs'
-    #filename = get_diagnostic_filename(basename, cfg)
-    filename = Path(cfg['plot_dir']) / basename
-    plot_diagnostic(cbf_dict, basename, provenance_record, cfg)
+    # Compute EOFs of observation
+    datasets = select_metadata(input_data, short_name='psl', dataset='ERA-20C')
+    for dataset in datasets:
+        logger.info("Select only observational data:\n%s",
+                    pformat(dataset))
+        odat, ocoord, eof, eof_perc = compute_eof(dataset)
 
-    return
+        basename = 'eof_' + Path(dataset['filename']).stem
+        provenance_record = get_provenance_record(
+            dataset, ancestor_files=[dataset['filename']])
+        save_data(basename, provenance_record, cfg, eof)
+        plot_diagnostic2(basename, provenance_record, cfg, eof)
+
+        basename = 'eof_perc_' + Path(dataset['filename']).stem
+        save_text(basename, provenance_record, cfg, eof_perc)
+
+    # Compute CBFs of CMIP model data
+    datasets = select_metadata(input_data, short_name='psl', activity='CMIP')
+    for dataset in datasets:
+        logger.info("Select only CMIP5/6 model data:\n%s",
+		    pformat(dataset))
+        mdat,mcoord, cbf, cbf_perc = compute_cbf(odat, ocoord, eof, dataset)
+
+        basename = 'cbf_' + Path(dataset['filename']).stem
+        provenance_record = get_provenance_record(
+            dataset, ancestor_files=[dataset['filename']])
+        save_data(basename, provenance_record, cfg, cbf)
+        plot_diagnostic2(basename, provenance_record, cfg, cbf)
+
+        basename = 'cbf_perc_' + Path(dataset['filename']).stem
+        save_text(basename, provenance_record, cfg, cbf_perc)
+
 
 if __name__ == '__main__':
+
     with run_diagnostic() as config:
         main(config)

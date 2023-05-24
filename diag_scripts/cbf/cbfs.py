@@ -16,7 +16,6 @@ Written by Stephen Outten 2021
 
 import numpy as np
 import iris
-#import iris.cube
 from eofs.iris import Eof
 from scipy import stats
 import sys
@@ -104,19 +103,6 @@ def calc_eof(cube, coords, nmode=1):
     eof = eof_solver.eofsAsCovariance(neofs=nmode)     
     perc = eof_solver.varianceFraction(nmode).data[nmode-1]*100
     
-    """
-    perc_cube = iris.cube.Cube([perc],
-            standard_name=cube.standard_name,
-            long_name='eof of '+cube.long_name,
-            var_name='eof_perc')
-
-    model_number=iris.coords.DimCoord(0, long_name='number_of_models')
-    perc_cube.add_dim_coord(model_number,0)
-    perc_cube.standard_name = cube.standard_name
-    perc_cube.long_name = 'eof percent'
-    perc_cube.var_name = 'eof_perc'
-    perc = perc_cube
-    """
     return eof[nmode-1,:,:], perc
 
 def calc_cbf(cube, eof, coords):
@@ -147,22 +133,17 @@ def calc_cbf(cube, eof, coords):
     cbf_perc = 100 * cbf_var/(np.sum(np.var(cube.data, 0) * weights))
     cbf = slope * np.std(pc)
 
-    """
-    cbf_cube=cube[0,:,:].copy(data=cbf[:,:])
+    cbf_cube=iris.cube.Cube(cbf)
     cbf_cube.standard_name=cube.standard_name
     cbf_cube.long_name='cbf of '+cube.standard_name
     cbf_cube.var_name='cbfs'
+    cbf_cube.units='no_unit'
     cbf_cube.attributes=[]
+    cbf_cube.add_dim_coord(cube.coord('latitude'),0)
+    cbf_cube.add_dim_coord(cube.coord('longitude'),1)
+
     cbf = cbf_cube
 
-    perc_cube = iris.cube.Cube([cbf_perc])
-    model_number=iris.coords.DimCoord([0], long_name='number_of_models')
-    perc_cube.add_dim_coord(model_number,0)
-    perc_cube.standard_name = cube.standard_name
-    perc_cube.long_name = 'cbf percent'
-    perc_cube.var_name = 'cbf_perc'
-    cbf_perc = perc_cube
-    """
     return cbf, cbf_perc
 
 def cbfs(model_fn, model_vn, obs_fn, obs_vn, nmode=1):
@@ -202,10 +183,6 @@ def cbfs(model_fn, model_vn, obs_fn, obs_vn, nmode=1):
         a = len(model_fn)
         cbf = np.nan * np.ones((a,b,c))
         cbf_perc = np.nan * np.ones((a))
-        """
-        cbf = iris.cube.Cube(np.nan * np.ones((a,b,c)))
-        cbf_perc = iris.cube.Cube(np.nan * np.ones((a)))
-        """
         for ii in range(a):
             mdat, mcoord = load_data(model_fn[ii], model_vn)
             if (mdat.coord(mcoord[1]).shape[0], mdat.coord(mcoord[2]).shape[0]) != (odat.coord(ocoord[1]).shape[0], odat.coord(ocoord[2]).shape[0]):
@@ -215,27 +192,6 @@ def cbfs(model_fn, model_vn, obs_fn, obs_vn, nmode=1):
             cbf_temp,perc_temp = calc_cbf(mdat, eof, mcoord)
             cbf[ii,:,:] = cbf_temp.copy()
             cbf_perc[ii] = perc_temp
-            """
-            cbf.data[ii,:,:] = cbf_temp.data
-            cbf_perc.data[ii] = perc_temp.data
-            """
-        """
-        cbf.standard_name = mdat.standard_name
-        cbf.long_name = 'cbf of '+mdat.long_name
-        cbf.var_name = 'cbfs'
-
-        model_number=iris.coords.DimCoord(range(1,a+1), long_name='number_of_models')
-        lat=mdat.coord('latitude')
-        lon=mdat.coord('longitude')
-        cbf.add_dim_coord(model_number,0)
-        cbf.add_dim_coord(lat,1)
-        cbf.add_dim_coord(lon,2)
-
-        cbf_perc.add_dim_coord(model_number,0)
-        cbf_perc.standard_name = mdat.standard_name
-        cbf_perc.long_name = 'cbf percent'
-        cbf_perc.var_name = 'cbf_perc'
-        """
     else:
         print('model_fn must either be a string containing a single filename including path or a list containing strings of filenames including paths.')
         print('Given model_fn is of type {}, so this ends here.'.format(type(model_fn)))
