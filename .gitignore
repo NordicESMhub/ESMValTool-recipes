@@ -24,7 +24,3 @@ __pycache__/
 #pytest
 .cache
 .pytest_cache
-
-# Data files
-*.nc
-*.nc4

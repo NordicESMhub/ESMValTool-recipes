@@ -8,16 +8,19 @@ documentation:
     Example recipe that calculate and plot the Common Base Function.
 
   authors:
-    - andela_bouwe
+    - unmaintained
+    #- yanchun_he
 
   maintainer:
-    - schlund_manuel
+    - unmaintained
+    #- yanchun_he
 
   references:
     - acknow_project
 
   projects:
     - esmval
+    #- NICEST-2
 
 datasets:
   - {dataset: NorESM2-LM, project: CMIP6, exp: historical, ensemble: r1i1p1f1, grid: gn}
