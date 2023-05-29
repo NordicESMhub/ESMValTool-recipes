@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:file="https://www.esmvaltool.org/file" xmlns:preprocessor="https://www.esmvaltool.org/preprocessor" xmlns:recipe="https://www.esmvaltool.org/recipe" xmlns:attribute="https://www.esmvaltool.org/attribute" xmlns:author="https://www.esmvaltool.org/author" xmlns:project="https://www.esmvaltool.org/project" xmlns:task="https://www.esmvaltool.org/task" xmlns:software="https://www.esmvaltool.org/software" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc"/>
+    <prov:usedEntity prov:ref="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_196001-196912.nc"/>
+    <prov:activity prov:ref="task:map/psl"/>
+  </prov:wasDerivedFrom>
+  <prov:entity prov:id="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_198001-198912.nc">
+    <attribute:Conventions>CF-1.7 CMIP-6.2</attribute:Conventions>
+    <attribute:activity_id>CMIP</attribute:activity_id>
+    <attribute:branch_method>Hybrid-restart from year 1631-01-01 of piControl</attribute:branch_method>
+    <attribute:branch_time>0.0</attribute:branch_time>
+    <attribute:branch_time_in_child>0.0</attribute:branch_time_in_child>
+    <attribute:branch_time_in_parent>441650.0</attribute:branch_time_in_parent>
+    <attribute:cmor_version>3.5.0</attribute:cmor_version>
+    <attribute:contact>Please send any requests or bug reports to noresm-ncc@met.no.</attribute:contact>
+    <attribute:creation_date>2019-10-15T21:26:39Z</attribute:creation_date>
+    <attribute:data_specs_version>01.00.31</attribute:data_specs_version>
+    <attribute:experiment>all-forcing simulation of the recent past</attribute:experiment>
+    <attribute:experiment_id>historical</attribute:experiment_id>
+    <attribute:external_variables>areacella</attribute:external_variables>
+    <attribute:forcing_index>1</attribute:forcing_index>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:further_info_url>https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r2i1p1f1</attribute:further_info_url>
+    <attribute:grid>finite-volume grid with 1.9x2.5 degree lat/lon resolution</attribute:grid>
+    <attribute:grid_label>gn</attribute:grid_label>
+    <attribute:history>2019-10-15T21:26:39Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.</attribute:history>
+    <attribute:initialization_index>1</attribute:initialization_index>
+    <attribute:institution>NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway</attribute:institution>
+    <attribute:institution_id>NCC</attribute:institution_id>
+    <attribute:license>CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</attribute:license>
+    <attribute:mip_era>CMIP6</attribute:mip_era>
+    <attribute:model_id>NorESM2-LM</attribute:model_id>
+    <attribute:nominal_resolution>250 km</attribute:nominal_resolution>
+    <attribute:parent_activity_id>CMIP</attribute:parent_activity_id>
+    <attribute:parent_experiment_id>piControl</attribute:parent_experiment_id>
+    <attribute:parent_mip_era>CMIP6</attribute:parent_mip_era>
+    <attribute:parent_source_id>NorESM2-LM</attribute:parent_source_id>
+    <attribute:parent_sub_experiment_id>none</attribute:parent_sub_experiment_id>
+    <attribute:parent_time_units>days since 0421-01-01</attribute:parent_time_units>
+    <attribute:parent_variant_label>r1i1p1f1</attribute:parent_variant_label>
+    <attribute:physics_index>1</attribute:physics_index>
+    <attribute:product>model-output</attribute:product>
+    <attribute:realization_index>2</attribute:realization_index>
+    <attribute:realm>atmos</attribute:realm>
+    <attribute:run_variant>N/A</attribute:run_variant>
+    <attribute:source>NorESM2-LM (2017): 
+aerosol: OsloAero
+atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
+atmosChem: OsloChemSimp
+land: CLM
+landIce: CISM
+ocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])
+ocnBgchem: HAMOCC
+seaIce: CICE</attribute:source>
+    <attribute:source_id>NorESM2-LM</attribute:source_id>
+    <attribute:source_type>AOGCM AER BGC</attribute:source_type>
+    <attribute:sub_experiment>none</attribute:sub_experiment>
+    <attribute:sub_experiment_id>none</attribute:sub_experiment_id>
+    <attribute:table_id>Amon</attribute:table_id>
+    <attribute:table_info>Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e</attribute:table_info>
+    <attribute:title>NorESM2-LM output prepared for CMIP6</attribute:title>
+    <attribute:tracking_id>hdl:21.14100/17b079e9-0de7-4c84-bfe3-e42cfcb6cdab</attribute:tracking_id>
+    <attribute:variable_id>psl</attribute:variable_id>
+    <attribute:variant_label>r2i1p1f1</attribute:variant_label>
+  </prov:entity>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_perc_CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.txt"/>
+    <prov:agent prov:ref="author:No maintainer available"/>
+  </prov:wasAttributedTo>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc"/>
+    <prov:usedEntity prov:ref="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_201001-201412.nc"/>
+    <prov:activity prov:ref="task:map/psl"/>
+  </prov:wasDerivedFrom>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="task:map/psl"/>
+    <prov:trigger prov:ref="recipe:recipe_cbf.yml"/>
+    <prov:starter prov:ref="software:esmvaltool==2.8.0"/>
+  </prov:wasStartedBy>
+  <prov:entity prov:id="recipe:recipe_cbf.yml">
+    <attribute:description>Example recipe that calculate and plot the Common Base Function.</attribute:description>
+    <attribute:references>['acknow_project']</attribute:references>
+  </prov:entity>
+  <prov:agent prov:id="author:No maintainer available">
+    <attribute:institute>Unseen University</attribute:institute>
+  </prov:agent>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc"/>
+    <prov:usedEntity prov:ref="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_200001-200912.nc"/>
+    <prov:activity prov:ref="task:map/psl"/>
+  </prov:wasDerivedFrom>
+  <prov:entity prov:id="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_196001-196912.nc">
+    <attribute:Conventions>CF-1.7 CMIP-6.2</attribute:Conventions>
+    <attribute:activity_id>CMIP</attribute:activity_id>
+    <attribute:branch_method>Hybrid-restart from year 1631-01-01 of piControl</attribute:branch_method>
+    <attribute:branch_time>0.0</attribute:branch_time>
+    <attribute:branch_time_in_child>0.0</attribute:branch_time_in_child>
+    <attribute:branch_time_in_parent>441650.0</attribute:branch_time_in_parent>
+    <attribute:cmor_version>3.5.0</attribute:cmor_version>
+    <attribute:contact>Please send any requests or bug reports to noresm-ncc@met.no.</attribute:contact>
+    <attribute:creation_date>2019-10-15T21:24:53Z</attribute:creation_date>
+    <attribute:data_specs_version>01.00.31</attribute:data_specs_version>
+    <attribute:experiment>all-forcing simulation of the recent past</attribute:experiment>
+    <attribute:experiment_id>historical</attribute:experiment_id>
+    <attribute:external_variables>areacella</attribute:external_variables>
+    <attribute:forcing_index>1</attribute:forcing_index>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:further_info_url>https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r2i1p1f1</attribute:further_info_url>
+    <attribute:grid>finite-volume grid with 1.9x2.5 degree lat/lon resolution</attribute:grid>
+    <attribute:grid_label>gn</attribute:grid_label>
+    <attribute:history>2019-10-15T21:24:53Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.</attribute:history>
+    <attribute:initialization_index>1</attribute:initialization_index>
+    <attribute:institution>NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway</attribute:institution>
+    <attribute:institution_id>NCC</attribute:institution_id>
+    <attribute:license>CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</attribute:license>
+    <attribute:mip_era>CMIP6</attribute:mip_era>
+    <attribute:model_id>NorESM2-LM</attribute:model_id>
+    <attribute:nominal_resolution>250 km</attribute:nominal_resolution>
+    <attribute:parent_activity_id>CMIP</attribute:parent_activity_id>
+    <attribute:parent_experiment_id>piControl</attribute:parent_experiment_id>
+    <attribute:parent_mip_era>CMIP6</attribute:parent_mip_era>
+    <attribute:parent_source_id>NorESM2-LM</attribute:parent_source_id>
+    <attribute:parent_sub_experiment_id>none</attribute:parent_sub_experiment_id>
+    <attribute:parent_time_units>days since 0421-01-01</attribute:parent_time_units>
+    <attribute:parent_variant_label>r1i1p1f1</attribute:parent_variant_label>
+    <attribute:physics_index>1</attribute:physics_index>
+    <attribute:product>model-output</attribute:product>
+    <attribute:realization_index>2</attribute:realization_index>
+    <attribute:realm>atmos</attribute:realm>
+    <attribute:run_variant>N/A</attribute:run_variant>
+    <attribute:source>NorESM2-LM (2017): 
+aerosol: OsloAero
+atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
+atmosChem: OsloChemSimp
+land: CLM
+landIce: CISM
+ocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])
+ocnBgchem: HAMOCC
+seaIce: CICE</attribute:source>
+    <attribute:source_id>NorESM2-LM</attribute:source_id>
+    <attribute:source_type>AOGCM AER BGC</attribute:source_type>
+    <attribute:sub_experiment>none</attribute:sub_experiment>
+    <attribute:sub_experiment_id>none</attribute:sub_experiment_id>
+    <attribute:table_id>Amon</attribute:table_id>
+    <attribute:table_info>Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e</attribute:table_info>
+    <attribute:title>NorESM2-LM output prepared for CMIP6</attribute:title>
+    <attribute:tracking_id>hdl:21.14100/dfebfedd-766b-4586-a727-c136fa51da05</attribute:tracking_id>
+    <attribute:variable_id>psl</attribute:variable_id>
+    <attribute:variant_label>r2i1p1f1</attribute:variant_label>
+  </prov:entity>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc"/>
+    <prov:usedEntity prov:ref="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_197001-197912.nc"/>
+    <prov:activity prov:ref="task:map/psl"/>
+  </prov:wasDerivedFrom>
+  <prov:entity prov:id="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_195001-195912.nc">
+    <attribute:Conventions>CF-1.7 CMIP-6.2</attribute:Conventions>
+    <attribute:activity_id>CMIP</attribute:activity_id>
+    <attribute:branch_method>Hybrid-restart from year 1631-01-01 of piControl</attribute:branch_method>
+    <attribute:branch_time>0.0</attribute:branch_time>
+    <attribute:branch_time_in_child>0.0</attribute:branch_time_in_child>
+    <attribute:branch_time_in_parent>441650.0</attribute:branch_time_in_parent>
+    <attribute:cmor_version>3.5.0</attribute:cmor_version>
+    <attribute:contact>Please send any requests or bug reports to noresm-ncc@met.no.</attribute:contact>
+    <attribute:creation_date>2019-10-15T21:22:36Z</attribute:creation_date>
+    <attribute:data_specs_version>01.00.31</attribute:data_specs_version>
+    <attribute:experiment>all-forcing simulation of the recent past</attribute:experiment>
+    <attribute:experiment_id>historical</attribute:experiment_id>
+    <attribute:external_variables>areacella</attribute:external_variables>
+    <attribute:forcing_index>1</attribute:forcing_index>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:further_info_url>https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r2i1p1f1</attribute:further_info_url>
+    <attribute:grid>finite-volume grid with 1.9x2.5 degree lat/lon resolution</attribute:grid>
+    <attribute:grid_label>gn</attribute:grid_label>
+    <attribute:history>2019-10-15T21:22:36Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.</attribute:history>
+    <attribute:initialization_index>1</attribute:initialization_index>
+    <attribute:institution>NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway</attribute:institution>
+    <attribute:institution_id>NCC</attribute:institution_id>
+    <attribute:license>CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</attribute:license>
+    <attribute:mip_era>CMIP6</attribute:mip_era>
+    <attribute:model_id>NorESM2-LM</attribute:model_id>
+    <attribute:nominal_resolution>250 km</attribute:nominal_resolution>
+    <attribute:parent_activity_id>CMIP</attribute:parent_activity_id>
+    <attribute:parent_experiment_id>piControl</attribute:parent_experiment_id>
+    <attribute:parent_mip_era>CMIP6</attribute:parent_mip_era>
+    <attribute:parent_source_id>NorESM2-LM</attribute:parent_source_id>
+    <attribute:parent_sub_experiment_id>none</attribute:parent_sub_experiment_id>
+    <attribute:parent_time_units>days since 0421-01-01</attribute:parent_time_units>
+    <attribute:parent_variant_label>r1i1p1f1</attribute:parent_variant_label>
+    <attribute:physics_index>1</attribute:physics_index>
+    <attribute:product>model-output</attribute:product>
+    <attribute:realization_index>2</attribute:realization_index>
+    <attribute:realm>atmos</attribute:realm>
+    <attribute:run_variant>N/A</attribute:run_variant>
+    <attribute:source>NorESM2-LM (2017): 
+aerosol: OsloAero
+atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
+atmosChem: OsloChemSimp
+land: CLM
+landIce: CISM
+ocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])
+ocnBgchem: HAMOCC
+seaIce: CICE</attribute:source>
+    <attribute:source_id>NorESM2-LM</attribute:source_id>
+    <attribute:source_type>AOGCM AER BGC</attribute:source_type>
+    <attribute:sub_experiment>none</attribute:sub_experiment>
+    <attribute:sub_experiment_id>none</attribute:sub_experiment_id>
+    <attribute:table_id>Amon</attribute:table_id>
+    <attribute:table_info>Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e</attribute:table_info>
+    <attribute:title>NorESM2-LM output prepared for CMIP6</attribute:title>
+    <attribute:tracking_id>hdl:21.14100/fac9b15a-f4ba-4659-9876-1b34dbd4c276</attribute:tracking_id>
+    <attribute:variable_id>psl</attribute:variable_id>
+    <attribute:variant_label>r2i1p1f1</attribute:variant_label>
+  </prov:entity>
+  <prov:agent prov:id="author:Andela, Bouwe">
+    <attribute:email>b.andela@esciencecenter.nl</attribute:email>
+    <attribute:github>bouweandela</attribute:github>
+    <attribute:institute>NLeSC, Netherlands</attribute:institute>
+    <attribute:orcid>https://orcid.org/0000-0001-9005-8940</attribute:orcid>
+  </prov:agent>
+  <prov:activity prov:id="task:map/script1"/>
+  <prov:entity prov:id="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_200001-200912.nc">
+    <attribute:Conventions>CF-1.7 CMIP-6.2</attribute:Conventions>
+    <attribute:activity_id>CMIP</attribute:activity_id>
+    <attribute:branch_method>Hybrid-restart from year 1631-01-01 of piControl</attribute:branch_method>
+    <attribute:branch_time>0.0</attribute:branch_time>
+    <attribute:branch_time_in_child>0.0</attribute:branch_time_in_child>
+    <attribute:branch_time_in_parent>441650.0</attribute:branch_time_in_parent>
+    <attribute:cmor_version>3.5.0</attribute:cmor_version>
+    <attribute:contact>Please send any requests or bug reports to noresm-ncc@met.no.</attribute:contact>
+    <attribute:creation_date>2019-10-15T21:29:25Z</attribute:creation_date>
+    <attribute:data_specs_version>01.00.31</attribute:data_specs_version>
+    <attribute:experiment>all-forcing simulation of the recent past</attribute:experiment>
+    <attribute:experiment_id>historical</attribute:experiment_id>
+    <attribute:external_variables>areacella</attribute:external_variables>
+    <attribute:forcing_index>1</attribute:forcing_index>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:further_info_url>https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r2i1p1f1</attribute:further_info_url>
+    <attribute:grid>finite-volume grid with 1.9x2.5 degree lat/lon resolution</attribute:grid>
+    <attribute:grid_label>gn</attribute:grid_label>
+    <attribute:history>2019-10-15T21:29:25Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.</attribute:history>
+    <attribute:initialization_index>1</attribute:initialization_index>
+    <attribute:institution>NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway</attribute:institution>
+    <attribute:institution_id>NCC</attribute:institution_id>
+    <attribute:license>CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</attribute:license>
+    <attribute:mip_era>CMIP6</attribute:mip_era>
+    <attribute:model_id>NorESM2-LM</attribute:model_id>
+    <attribute:nominal_resolution>250 km</attribute:nominal_resolution>
+    <attribute:parent_activity_id>CMIP</attribute:parent_activity_id>
+    <attribute:parent_experiment_id>piControl</attribute:parent_experiment_id>
+    <attribute:parent_mip_era>CMIP6</attribute:parent_mip_era>
+    <attribute:parent_source_id>NorESM2-LM</attribute:parent_source_id>
+    <attribute:parent_sub_experiment_id>none</attribute:parent_sub_experiment_id>
+    <attribute:parent_time_units>days since 0421-01-01</attribute:parent_time_units>
+    <attribute:parent_variant_label>r1i1p1f1</attribute:parent_variant_label>
+    <attribute:physics_index>1</attribute:physics_index>
+    <attribute:product>model-output</attribute:product>
+    <attribute:realization_index>2</attribute:realization_index>
+    <attribute:realm>atmos</attribute:realm>
+    <attribute:run_variant>N/A</attribute:run_variant>
+    <attribute:source>NorESM2-LM (2017): 
+aerosol: OsloAero
+atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
+atmosChem: OsloChemSimp
+land: CLM
+landIce: CISM
+ocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])
+ocnBgchem: HAMOCC
+seaIce: CICE</attribute:source>
+    <attribute:source_id>NorESM2-LM</attribute:source_id>
+    <attribute:source_type>AOGCM AER BGC</attribute:source_type>
+    <attribute:sub_experiment>none</attribute:sub_experiment>
+    <attribute:sub_experiment_id>none</attribute:sub_experiment_id>
+    <attribute:table_id>Amon</attribute:table_id>
+    <attribute:table_info>Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e</attribute:table_info>
+    <attribute:title>NorESM2-LM output prepared for CMIP6</attribute:title>
+    <attribute:tracking_id>hdl:21.14100/94762ba0-cc65-41f0-8f57-569d1e4588b3</attribute:tracking_id>
+    <attribute:variable_id>psl</attribute:variable_id>
+    <attribute:variant_label>r2i1p1f1</attribute:variant_label>
+  </prov:entity>
+  <prov:entity prov:id="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc">
+    <attribute:activity>CMIP</attribute:activity>
+    <attribute:alias>CMIP6_NorESM2-LM_r2i1p1f1</attribute:alias>
+    <attribute:dataset>NorESM2-LM</attribute:dataset>
+    <attribute:diagnostic>map</attribute:diagnostic>
+    <attribute:end_year>2010</attribute:end_year>
+    <attribute:ensemble>r2i1p1f1</attribute:ensemble>
+    <attribute:exp>historical</attribute:exp>
+    <attribute:filename>/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc</attribute:filename>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:grid>gn</attribute:grid>
+    <attribute:institute>['NCC']</attribute:institute>
+    <attribute:long_name>Sea Level Pressure</attribute:long_name>
+    <attribute:mip>Amon</attribute:mip>
+    <attribute:modeling_realm>['atmos']</attribute:modeling_realm>
+    <attribute:original_short_name>psl</attribute:original_short_name>
+    <attribute:preprocessor>prepare_map</attribute:preprocessor>
+    <attribute:project>CMIP6</attribute:project>
+    <attribute:recipe_dataset_index>1</attribute:recipe_dataset_index>
+    <attribute:reference_dataset>ERA-20C</attribute:reference_dataset>
+    <attribute:short_name>psl</attribute:short_name>
+    <attribute:standard_name>air_pressure_at_mean_sea_level</attribute:standard_name>
+    <attribute:start_year>1950</attribute:start_year>
+    <attribute:timerange>1950/2010</attribute:timerange>
+    <attribute:units>Pa</attribute:units>
+    <attribute:variable_group>psl</attribute:variable_group>
+    <attribute:version>v20190920</attribute:version>
+    <preprocessor:extract_region>{'start_latitude': 20, 'end_latitude': 90, 'start_longitude': 0, 'end_longitude': 359}</preprocessor:extract_region>
+    <preprocessor:extract_season>{'season': 'mam'}</preprocessor:extract_season>
+    <preprocessor:load>{'callback': 'default'}</preprocessor:load>
+    <preprocessor:regrid>{'target_grid': '1x1', 'lon_offset': False, 'lat_offset': False, 'scheme': 'linear'}</preprocessor:regrid>
+    <preprocessor:remove_supplementary_variables>{}</preprocessor:remove_supplementary_variables>
+    <preprocessor:save>{'compress': False, 'filename': PosixPath('/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc')}</preprocessor:save>
+  </prov:entity>
+  <prov:entity prov:id="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_197001-197912.nc">
+    <attribute:Conventions>CF-1.7 CMIP-6.2</attribute:Conventions>
+    <attribute:activity_id>CMIP</attribute:activity_id>
+    <attribute:branch_method>Hybrid-restart from year 1631-01-01 of piControl</attribute:branch_method>
+    <attribute:branch_time>0.0</attribute:branch_time>
+    <attribute:branch_time_in_child>0.0</attribute:branch_time_in_child>
+    <attribute:branch_time_in_parent>441650.0</attribute:branch_time_in_parent>
+    <attribute:cmor_version>3.5.0</attribute:cmor_version>
+    <attribute:contact>Please send any requests or bug reports to noresm-ncc@met.no.</attribute:contact>
+    <attribute:creation_date>2019-10-15T21:25:39Z</attribute:creation_date>
+    <attribute:data_specs_version>01.00.31</attribute:data_specs_version>
+    <attribute:experiment>all-forcing simulation of the recent past</attribute:experiment>
+    <attribute:experiment_id>historical</attribute:experiment_id>
+    <attribute:external_variables>areacella</attribute:external_variables>
+    <attribute:forcing_index>1</attribute:forcing_index>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:further_info_url>https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r2i1p1f1</attribute:further_info_url>
+    <attribute:grid>finite-volume grid with 1.9x2.5 degree lat/lon resolution</attribute:grid>
+    <attribute:grid_label>gn</attribute:grid_label>
+    <attribute:history>2019-10-15T21:25:39Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.</attribute:history>
+    <attribute:initialization_index>1</attribute:initialization_index>
+    <attribute:institution>NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway</attribute:institution>
+    <attribute:institution_id>NCC</attribute:institution_id>
+    <attribute:license>CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</attribute:license>
+    <attribute:mip_era>CMIP6</attribute:mip_era>
+    <attribute:model_id>NorESM2-LM</attribute:model_id>
+    <attribute:nominal_resolution>250 km</attribute:nominal_resolution>
+    <attribute:parent_activity_id>CMIP</attribute:parent_activity_id>
+    <attribute:parent_experiment_id>piControl</attribute:parent_experiment_id>
+    <attribute:parent_mip_era>CMIP6</attribute:parent_mip_era>
+    <attribute:parent_source_id>NorESM2-LM</attribute:parent_source_id>
+    <attribute:parent_sub_experiment_id>none</attribute:parent_sub_experiment_id>
+    <attribute:parent_time_units>days since 0421-01-01</attribute:parent_time_units>
+    <attribute:parent_variant_label>r1i1p1f1</attribute:parent_variant_label>
+    <attribute:physics_index>1</attribute:physics_index>
+    <attribute:product>model-output</attribute:product>
+    <attribute:realization_index>2</attribute:realization_index>
+    <attribute:realm>atmos</attribute:realm>
+    <attribute:run_variant>N/A</attribute:run_variant>
+    <attribute:source>NorESM2-LM (2017): 
+aerosol: OsloAero
+atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
+atmosChem: OsloChemSimp
+land: CLM
+landIce: CISM
+ocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])
+ocnBgchem: HAMOCC
+seaIce: CICE</attribute:source>
+    <attribute:source_id>NorESM2-LM</attribute:source_id>
+    <attribute:source_type>AOGCM AER BGC</attribute:source_type>
+    <attribute:sub_experiment>none</attribute:sub_experiment>
+    <attribute:sub_experiment_id>none</attribute:sub_experiment_id>
+    <attribute:table_id>Amon</attribute:table_id>
+    <attribute:table_info>Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e</attribute:table_info>
+    <attribute:title>NorESM2-LM output prepared for CMIP6</attribute:title>
+    <attribute:tracking_id>hdl:21.14100/0eecc59f-91e8-4882-8fa9-bc12b66494c5</attribute:tracking_id>
+    <attribute:variable_id>psl</attribute:variable_id>
+    <attribute:variant_label>r2i1p1f1</attribute:variant_label>
+  </prov:entity>
+  <prov:agent prov:id="project:DLR project ESMVal"/>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_perc_CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.txt"/>
+    <prov:usedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc"/>
+    <prov:activity prov:ref="task:map/script1"/>
+  </prov:wasDerivedFrom>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="recipe:recipe_cbf.yml"/>
+    <prov:agent prov:ref="author:Andela, Bouwe"/>
+  </prov:wasAttributedTo>
+  <prov:entity prov:id="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_201001-201412.nc">
+    <attribute:Conventions>CF-1.7 CMIP-6.2</attribute:Conventions>
+    <attribute:activity_id>CMIP</attribute:activity_id>
+    <attribute:branch_method>Hybrid-restart from year 1631-01-01 of piControl</attribute:branch_method>
+    <attribute:branch_time>0.0</attribute:branch_time>
+    <attribute:branch_time_in_child>0.0</attribute:branch_time_in_child>
+    <attribute:branch_time_in_parent>441650.0</attribute:branch_time_in_parent>
+    <attribute:cmor_version>3.5.0</attribute:cmor_version>
+    <attribute:contact>Please send any requests or bug reports to noresm-ncc@met.no.</attribute:contact>
+    <attribute:creation_date>2019-10-15T21:20:50Z</attribute:creation_date>
+    <attribute:data_specs_version>01.00.31</attribute:data_specs_version>
+    <attribute:experiment>all-forcing simulation of the recent past</attribute:experiment>
+    <attribute:experiment_id>historical</attribute:experiment_id>
+    <attribute:external_variables>areacella</attribute:external_variables>
+    <attribute:forcing_index>1</attribute:forcing_index>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:further_info_url>https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r2i1p1f1</attribute:further_info_url>
+    <attribute:grid>finite-volume grid with 1.9x2.5 degree lat/lon resolution</attribute:grid>
+    <attribute:grid_label>gn</attribute:grid_label>
+    <attribute:history>2019-10-15T21:20:50Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.</attribute:history>
+    <attribute:initialization_index>1</attribute:initialization_index>
+    <attribute:institution>NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway</attribute:institution>
+    <attribute:institution_id>NCC</attribute:institution_id>
+    <attribute:license>CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</attribute:license>
+    <attribute:mip_era>CMIP6</attribute:mip_era>
+    <attribute:model_id>NorESM2-LM</attribute:model_id>
+    <attribute:nominal_resolution>250 km</attribute:nominal_resolution>
+    <attribute:parent_activity_id>CMIP</attribute:parent_activity_id>
+    <attribute:parent_experiment_id>piControl</attribute:parent_experiment_id>
+    <attribute:parent_mip_era>CMIP6</attribute:parent_mip_era>
+    <attribute:parent_source_id>NorESM2-LM</attribute:parent_source_id>
+    <attribute:parent_sub_experiment_id>none</attribute:parent_sub_experiment_id>
+    <attribute:parent_time_units>days since 0421-01-01</attribute:parent_time_units>
+    <attribute:parent_variant_label>r1i1p1f1</attribute:parent_variant_label>
+    <attribute:physics_index>1</attribute:physics_index>
+    <attribute:product>model-output</attribute:product>
+    <attribute:realization_index>2</attribute:realization_index>
+    <attribute:realm>atmos</attribute:realm>
+    <attribute:run_variant>N/A</attribute:run_variant>
+    <attribute:source>NorESM2-LM (2017): 
+aerosol: OsloAero
+atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
+atmosChem: OsloChemSimp
+land: CLM
+landIce: CISM
+ocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])
+ocnBgchem: HAMOCC
+seaIce: CICE</attribute:source>
+    <attribute:source_id>NorESM2-LM</attribute:source_id>
+    <attribute:source_type>AOGCM AER BGC</attribute:source_type>
+    <attribute:sub_experiment>none</attribute:sub_experiment>
+    <attribute:sub_experiment_id>none</attribute:sub_experiment_id>
+    <attribute:table_id>Amon</attribute:table_id>
+    <attribute:table_info>Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e</attribute:table_info>
+    <attribute:title>NorESM2-LM output prepared for CMIP6</attribute:title>
+    <attribute:tracking_id>hdl:21.14100/e983e9c6-2559-4610-ab22-94f03f225517</attribute:tracking_id>
+    <attribute:variable_id>psl</attribute:variable_id>
+    <attribute:variant_label>r2i1p1f1</attribute:variant_label>
+  </prov:entity>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc"/>
+    <prov:usedEntity prov:ref="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_198001-198912.nc"/>
+    <prov:activity prov:ref="task:map/psl"/>
+  </prov:wasDerivedFrom>
+  <prov:entity prov:id="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_199001-199912.nc">
+    <attribute:Conventions>CF-1.7 CMIP-6.2</attribute:Conventions>
+    <attribute:activity_id>CMIP</attribute:activity_id>
+    <attribute:branch_method>Hybrid-restart from year 1631-01-01 of piControl</attribute:branch_method>
+    <attribute:branch_time>0.0</attribute:branch_time>
+    <attribute:branch_time_in_child>0.0</attribute:branch_time_in_child>
+    <attribute:branch_time_in_parent>441650.0</attribute:branch_time_in_parent>
+    <attribute:cmor_version>3.5.0</attribute:cmor_version>
+    <attribute:contact>Please send any requests or bug reports to noresm-ncc@met.no.</attribute:contact>
+    <attribute:creation_date>2019-10-15T21:28:01Z</attribute:creation_date>
+    <attribute:data_specs_version>01.00.31</attribute:data_specs_version>
+    <attribute:experiment>all-forcing simulation of the recent past</attribute:experiment>
+    <attribute:experiment_id>historical</attribute:experiment_id>
+    <attribute:external_variables>areacella</attribute:external_variables>
+    <attribute:forcing_index>1</attribute:forcing_index>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:further_info_url>https://furtherinfo.es-doc.org/CMIP6.NCC.NorESM2-LM.historical.none.r2i1p1f1</attribute:further_info_url>
+    <attribute:grid>finite-volume grid with 1.9x2.5 degree lat/lon resolution</attribute:grid>
+    <attribute:grid_label>gn</attribute:grid_label>
+    <attribute:history>2019-10-15T21:28:01Z ; CMOR rewrote data to be consistent with CMIP6, CF-1.7 CMIP-6.2 and CF standards.</attribute:history>
+    <attribute:initialization_index>1</attribute:initialization_index>
+    <attribute:institution>NorESM Climate modeling Consortium consisting of CICERO (Center for International Climate and Environmental Research, Oslo 0349), MET-Norway (Norwegian Meteorological Institute, Oslo 0313), NERSC (Nansen Environmental and Remote Sensing Center, Bergen 5006), NILU (Norwegian Institute for Air Research, Kjeller 2027), UiB (University of Bergen, Bergen 5007), UiO (University of Oslo, Oslo 0313) and UNI (Uni Research, Bergen 5008), Norway. Mailing address: NCC, c/o MET-Norway, Henrik Mohns plass 1, Oslo 0313, Norway</attribute:institution>
+    <attribute:institution_id>NCC</attribute:institution_id>
+    <attribute:license>CMIP6 model data produced by NCC is licensed under a Creative Commons Attribution ShareAlike 4.0 International License (https://creativecommons.org/licenses). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing CMIP6 output, including citation requirements and proper acknowledgment. Further information about this data, including some limitations, can be found via the further_info_url (recorded as a global attribute in this file) and at https:///pcmdi.llnl.gov/. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.</attribute:license>
+    <attribute:mip_era>CMIP6</attribute:mip_era>
+    <attribute:model_id>NorESM2-LM</attribute:model_id>
+    <attribute:nominal_resolution>250 km</attribute:nominal_resolution>
+    <attribute:parent_activity_id>CMIP</attribute:parent_activity_id>
+    <attribute:parent_experiment_id>piControl</attribute:parent_experiment_id>
+    <attribute:parent_mip_era>CMIP6</attribute:parent_mip_era>
+    <attribute:parent_source_id>NorESM2-LM</attribute:parent_source_id>
+    <attribute:parent_sub_experiment_id>none</attribute:parent_sub_experiment_id>
+    <attribute:parent_time_units>days since 0421-01-01</attribute:parent_time_units>
+    <attribute:parent_variant_label>r1i1p1f1</attribute:parent_variant_label>
+    <attribute:physics_index>1</attribute:physics_index>
+    <attribute:product>model-output</attribute:product>
+    <attribute:realization_index>2</attribute:realization_index>
+    <attribute:realm>atmos</attribute:realm>
+    <attribute:run_variant>N/A</attribute:run_variant>
+    <attribute:source>NorESM2-LM (2017): 
+aerosol: OsloAero
+atmos: CAM-OSLO (2 degree resolution; 144 x 96; 32 levels; top level 3 mb)
+atmosChem: OsloChemSimp
+land: CLM
+landIce: CISM
+ocean: MICOM (1 degree resolution; 360 x 384; 70 levels; top grid cell minimum 0-2.5 m [native model uses hybrid density and generic upper-layer coordinate interpolated to z-level for contributed data])
+ocnBgchem: HAMOCC
+seaIce: CICE</attribute:source>
+    <attribute:source_id>NorESM2-LM</attribute:source_id>
+    <attribute:source_type>AOGCM AER BGC</attribute:source_type>
+    <attribute:sub_experiment>none</attribute:sub_experiment>
+    <attribute:sub_experiment_id>none</attribute:sub_experiment_id>
+    <attribute:table_id>Amon</attribute:table_id>
+    <attribute:table_info>Creation Date:(24 July 2019) MD5:0bb394a356ef9d214d027f1aca45853e</attribute:table_info>
+    <attribute:title>NorESM2-LM output prepared for CMIP6</attribute:title>
+    <attribute:tracking_id>hdl:21.14100/8d22fc08-9808-499b-b87b-a76761dd8965</attribute:tracking_id>
+    <attribute:variable_id>psl</attribute:variable_id>
+    <attribute:variant_label>r2i1p1f1</attribute:variant_label>
+  </prov:entity>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="recipe:recipe_cbf.yml"/>
+    <prov:agent prov:ref="project:DLR project ESMVal"/>
+  </prov:wasAttributedTo>
+  <prov:activity prov:id="software:esmvaltool==2.8.0"/>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="task:map/script1"/>
+    <prov:trigger prov:ref="recipe:recipe_cbf.yml"/>
+    <prov:starter prov:ref="software:esmvaltool==2.8.0"/>
+  </prov:wasStartedBy>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc"/>
+    <prov:usedEntity prov:ref="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_195001-195912.nc"/>
+    <prov:activity prov:ref="task:map/psl"/>
+  </prov:wasDerivedFrom>
+  <prov:entity prov:id="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_perc_CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.txt">
+    <attribute:caption>Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.</attribute:caption>
+    <attribute:domains>('global',)</attribute:domains>
+    <attribute:plot_types>('zonal mean',)</attribute:plot_types>
+    <attribute:quickplot>{'plot_type': 'pcolormesh', 'cmap': 'RdBu'}</attribute:quickplot>
+    <attribute:realms>('atmosphere',)</attribute:realms>
+    <attribute:references>['NICEST-2']</attribute:references>
+    <attribute:script>script1</attribute:script>
+    <attribute:script_file>~/projects/NICEST2/diag_scripts/cbf/diag_cbfs.py</attribute:script_file>
+    <attribute:statistics>('mean',)</attribute:statistics>
+    <attribute:themes>('physics',)</attribute:themes>
+  </prov:entity>
+  <prov:activity prov:id="task:map/psl"/>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc"/>
+    <prov:usedEntity prov:ref="file:/scratch/yanchun/ESGF/CMIP6/CMIP/NCC/NorESM2-LM/historical/r2i1p1f1/Amon/psl/gn/v20190920/psl_Amon_NorESM2-LM_historical_r2i1p1f1_gn_199001-199912.nc"/>
+    <prov:activity prov:ref="task:map/psl"/>
+  </prov:wasDerivedFrom>
+</prov:document>

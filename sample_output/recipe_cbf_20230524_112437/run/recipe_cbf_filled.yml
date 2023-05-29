@@ -1,0 +1,70 @@
+documentation:
+  title: Common Base Function Analysis for CMIP Models
+  description: Example recipe that calculate and plot the Common Base Function.
+  authors:
+  - andela_bouwe
+  maintainer:
+  - schlund_manuel
+  references:
+  - acknow_project
+  projects:
+  - esmval
+preprocessors:
+  prepare_map:
+    extract_season:
+      season: mam
+    regrid:
+      target_grid: 1x1
+      lon_offset: false
+      lat_offset: false
+      scheme: linear
+    extract_region:
+      start_latitude: 20
+      end_latitude: 90
+      start_longitude: 0
+      end_longitude: 359
+  default: {}
+diagnostics:
+  map:
+    title: common base function
+    description: calculate and plot multiple models common base function
+    themes:
+    - phys
+    realms:
+    - atmos
+    variables:
+      psl:
+        mip: Amon
+        preprocessor: prepare_map
+        reference_dataset: ERA-20C
+        timerange: 1950/2010
+    scripts:
+      script1:
+        script: ~/projects/NICEST2/diag_scripts/cbf/diag_cbfs.py
+        quickplot:
+          plot_type: pcolormesh
+          cmap: RdBu
+datasets:
+- dataset: NorESM2-LM
+  exp: historical
+  grid: gn
+  project: CMIP6
+  version: v20190815
+  ensemble: r1i1p1f1
+- dataset: NorESM2-LM
+  exp: historical
+  grid: gn
+  project: CMIP6
+  version: v20190920
+  ensemble: r(2:3)i1p1f1
+- dataset: NorESM2-MM
+  exp: historical
+  grid: gn
+  project: CMIP6
+  version: v20191108
+  ensemble: r1i1p1f1
+- dataset: ERA-20C
+  project: OBS6
+  tier: 3
+  type: reanaly
+  version: 1

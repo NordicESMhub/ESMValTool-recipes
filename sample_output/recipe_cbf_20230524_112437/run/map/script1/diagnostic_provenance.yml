@@ -1,0 +1,210 @@
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/plots/map/script1/png/cbf_CMIP6_NorESM2-LM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.png
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/plots/map/script1/png/cbf_CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.png
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/plots/map/script1/png/cbf_CMIP6_NorESM2-LM_Amon_historical_r3i1p1f1_psl_gn_1950-2010.png
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r3i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/plots/map/script1/png/cbf_CMIP6_NorESM2-MM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.png
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-MM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-MM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/plots/map/script1/png/eof_OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.png
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to ERA-20C.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_CMIP6_NorESM2-LM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.nc
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_CMIP6_NorESM2-LM_Amon_historical_r3i1p1f1_psl_gn_1950-2010.nc
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r3i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_CMIP6_NorESM2-MM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.nc
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-MM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-MM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_perc_CMIP6_NorESM2-LM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.txt
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_perc_CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.txt
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r2i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_perc_CMIP6_NorESM2-LM_Amon_historical_r3i1p1f1_psl_gn_1950-2010.txt
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-LM_Amon_historical_r3i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-LM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/cbf_perc_CMIP6_NorESM2-MM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.txt
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/CMIP6_NorESM2-MM_Amon_historical_r1i1p1f1_psl_gn_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to NorESM2-MM.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/eof_OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to ERA-20C.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean
+? /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/eof_perc_OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.txt
+: ancestors:
+  - /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc
+  authors:
+  - unmaintained
+  caption: Average Sea Level Pressure between 1950 and 2010 according to ERA-20C.
+  domains:
+  - global
+  plot_types:
+  - zonal
+  references:
+  - NICEST-2
+  statistics:
+  - mean

@@ -1,0 +1,107 @@
+INFO    [1317677] 
+______________________________________________________________________
+          _____ ____  __  ____     __    _ _____           _
+         | ____/ ___||  \/  \ \   / /_ _| |_   _|__   ___ | |
+         |  _| \___ \| |\/| |\ \ / / _` | | | |/ _ \ / _ \| |
+         | |___ ___) | |  | | \ V / (_| | | | | (_) | (_) | |
+         |_____|____/|_|  |_|  \_/ \__,_|_| |_|\___/ \___/|_|
+______________________________________________________________________
+
+ESMValTool - Earth System Model Evaluation Tool.
+
+http://www.esmvaltool.org
+
+CORE DEVELOPMENT TEAM AND CONTACTS:
+  Birgit Hassler (Co-PI; DLR, Germany - birgit.hassler@dlr.de)
+  Alistair Sellar (Co-PI; Met Office, UK - alistair.sellar@metoffice.gov.uk)
+  Bouwe Andela (Netherlands eScience Center, The Netherlands - b.andela@esciencecenter.nl)
+  Lee de Mora (PML, UK - ledm@pml.ac.uk)
+  Niels Drost (Netherlands eScience Center, The Netherlands - n.drost@esciencecenter.nl)
+  Veronika Eyring (DLR, Germany - veronika.eyring@dlr.de)
+  Bettina Gier (UBremen, Germany - gier@uni-bremen.de)
+  Remi Kazeroni (DLR, Germany - remi.kazeroni@dlr.de)
+  Nikolay Koldunov (AWI, Germany - nikolay.koldunov@awi.de)
+  Axel Lauer (DLR, Germany - axel.lauer@dlr.de)
+  Saskia Loosveldt-Tomas (BSC, Spain - saskia.loosveldt@bsc.es)
+  Ruth Lorenz (ETH Zurich, Switzerland - ruth.lorenz@env.ethz.ch)
+  Benjamin Mueller (LMU, Germany - b.mueller@iggf.geo.uni-muenchen.de)
+  Valeriu Predoi (URead, UK - valeriu.predoi@ncas.ac.uk)
+  Mattia Righi (DLR, Germany - mattia.righi@dlr.de)
+  Manuel Schlund (DLR, Germany - manuel.schlund@dlr.de)
+  Breixo Solino Fernandez (DLR, Germany - breixo.solinofernandez@dlr.de)
+  Javier Vegas-Regidor (BSC, Spain - javier.vegas@bsc.es)
+  Klaus Zimmermann (SMHI, Sweden - klaus.zimmermann@smhi.se)
+
+For further help, please read the documentation at
+http://docs.esmvaltool.org. Have fun!
+
+INFO    [1317677] Package versions
+INFO    [1317677] ----------------
+INFO    [1317677] ESMValCore: 2.8.0
+INFO    [1317677] ESMValTool: 2.8.0
+INFO    [1317677] ----------------
+INFO    [1317677] Using config file /nird/home/yanchun/.esmvaltool/config-user.yml
+INFO    [1317677] Writing program log files to:
+/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/main_log.txt
+/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/main_log_debug.txt
+INFO    [1317677] Starting the Earth System Model Evaluation Tool at time: 2023-05-24 11:24:38 UTC
+INFO    [1317677] ----------------------------------------------------------------------
+INFO    [1317677] RECIPE   = /nird/home/yanchun/projects/NICEST2/recipes/recipe_cbf.yml
+INFO    [1317677] RUNDIR     = /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run
+INFO    [1317677] WORKDIR    = /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work
+INFO    [1317677] PREPROCDIR = /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc
+INFO    [1317677] PLOTDIR    = /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/plots
+INFO    [1317677] ----------------------------------------------------------------------
+INFO    [1317677] Running tasks using at most 256 processes
+INFO    [1317677] If your system hangs during execution, it may not have enough memory for keeping this number of tasks in memory.
+INFO    [1317677] If you experience memory problems, try reducing 'max_parallel_tasks' in your user configuration file.
+INFO    [1317677] Creating tasks from recipe
+INFO    [1317677] Creating tasks for diagnostic map
+INFO    [1317677] Creating diagnostic task map/script1
+INFO    [1317677] Creating preprocessor task map/psl
+INFO    [1317677] Creating preprocessor 'prepare_map' task for variable 'psl'
+INFO    [1317677] Found input files for Dataset: psl, Amon, CMIP6, NorESM2-LM, CMIP, historical, r1i1p1f1, gn, v20190815
+INFO    [1317677] Found input files for Dataset: psl, Amon, CMIP6, NorESM2-LM, CMIP, historical, r2i1p1f1, gn, v20190920
+INFO    [1317677] Found input files for Dataset: psl, Amon, CMIP6, NorESM2-LM, CMIP, historical, r3i1p1f1, gn, v20190920
+INFO    [1317677] Found input files for Dataset: psl, Amon, CMIP6, NorESM2-MM, CMIP, historical, r1i1p1f1, gn, v20191108
+INFO    [1317677] Found input files for Dataset: psl, Amon, OBS6, ERA-20C, 1
+INFO    [1317677] PreprocessingTask map/psl created.
+INFO    [1317677] These tasks will be executed: map/psl, map/script1
+INFO    [1317677] Wrote recipe with version numbers and wildcards to:
+file:///projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/recipe_cbf_filled.yml
+INFO    [1317677] Running 2 tasks using 2 processes
+INFO    [1317818] Starting task map/psl in process [1317818]
+INFO    [1317677] Progress: 1 tasks running, 1 tasks waiting for ancestors, 0/2 done
+WARNING [1317818] There were warnings in variable psl:
+ Added guessed bounds to coordinate lon from var lon
+ Added guessed bounds to coordinate lat from var lat
+ Added guessed bounds to coordinate time from var psl
+loaded from file /scratch/yanchun/ESGF/obsdata/Tier3/ERA-20C/OBS6_ERA-20C_reanaly_1_Amon_psl_190001-201012.nc
+INFO    [1317818] Successfully completed task map/psl (priority 1) in 0:00:48.630953
+INFO    [1317677] Progress: 0 tasks running, 1 tasks waiting for ancestors, 1/2 done
+INFO    [1317819] Starting task map/script1 in process [1317819]
+INFO    [1317819] Running command ['/conda/esmvaltool/2.8.0/bin/python', '/nird/home/yanchun/projects/NICEST2/diag_scripts/cbf/diag_cbfs.py', '/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/map/script1/settings.yml']
+INFO    [1317819] Writing output to /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1
+INFO    [1317819] Writing plots to /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/plots/map/script1
+INFO    [1317819] Writing log to /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/map/script1/log.txt
+INFO    [1317819] To re-run this diagnostic script, run:
+cd /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/map/script1; MPLBACKEND="Agg" /conda/esmvaltool/2.8.0/bin/python /nird/home/yanchun/projects/NICEST2/diag_scripts/cbf/diag_cbfs.py /projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/map/script1/settings.yml
+INFO    [1317677] Progress: 1 tasks running, 0 tasks waiting for ancestors, 1/2 done
+INFO    [1317819] Maximum memory used (estimate): 0.9 GB
+INFO    [1317819] Sampled every second. It may be inaccurate if short but high spikes in memory consumption occur.
+WARNING [1317819] The reference file /conda/esmvaltool/2.8.0/lib/python3.10/site-packages/esmvaltool/references/2.bibtex does not exist, citation information incomplete.
+WARNING [1317819] The reference file /conda/esmvaltool/2.8.0/lib/python3.10/site-packages/esmvaltool/references/NICEST.bibtex does not exist, citation information incomplete.
+INFO    [1317819] Successfully completed task map/script1 (priority 0) in 0:00:20.615415
+INFO    [1317677] Progress: 0 tasks running, 0 tasks waiting for ancestors, 2/2 done
+INFO    [1317677] Successfully completed all tasks.
+INFO    [1317677] Wrote recipe with version numbers and wildcards to:
+file:///projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/run/recipe_cbf_filled.yml
+INFO    [1317677] Wrote recipe output to:
+file:///projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/index.html
+INFO    [1317677] Ending the Earth System Model Evaluation Tool at time: 2023-05-24 11:25:48 UTC
+INFO    [1317677] Time for running the recipe was: 0:01:09.769607
+INFO    [1317677] Maximum memory used (estimate): 3.3 GB
+INFO    [1317677] Sampled every second. It may be inaccurate if short but high spikes in memory consumption occur.
+INFO    [1317677] Removing `preproc` directory containing preprocessed data
+INFO    [1317677] If this data is further needed, then set `remove_preproc_dir` to `false` in your user configuration file
+INFO    [1317677] Run was successful

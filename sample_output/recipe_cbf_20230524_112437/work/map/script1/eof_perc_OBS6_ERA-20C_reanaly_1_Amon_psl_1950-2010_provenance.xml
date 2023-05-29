@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:file="https://www.esmvaltool.org/file" xmlns:preprocessor="https://www.esmvaltool.org/preprocessor" xmlns:recipe="https://www.esmvaltool.org/recipe" xmlns:attribute="https://www.esmvaltool.org/attribute" xmlns:author="https://www.esmvaltool.org/author" xmlns:project="https://www.esmvaltool.org/project" xmlns:task="https://www.esmvaltool.org/task" xmlns:software="https://www.esmvaltool.org/software" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc"/>
+    <prov:usedEntity prov:ref="file:/scratch/yanchun/ESGF/obsdata/Tier3/ERA-20C/OBS6_ERA-20C_reanaly_1_Amon_psl_190001-201012.nc"/>
+    <prov:activity prov:ref="task:map/psl"/>
+  </prov:wasDerivedFrom>
+  <prov:entity prov:id="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc">
+    <attribute:alias>OBS6</attribute:alias>
+    <attribute:dataset>ERA-20C</attribute:dataset>
+    <attribute:diagnostic>map</attribute:diagnostic>
+    <attribute:end_year>2010</attribute:end_year>
+    <attribute:filename>/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc</attribute:filename>
+    <attribute:frequency>mon</attribute:frequency>
+    <attribute:long_name>Sea Level Pressure</attribute:long_name>
+    <attribute:mip>Amon</attribute:mip>
+    <attribute:modeling_realm>['atmos']</attribute:modeling_realm>
+    <attribute:original_short_name>psl</attribute:original_short_name>
+    <attribute:preprocessor>prepare_map</attribute:preprocessor>
+    <attribute:project>OBS6</attribute:project>
+    <attribute:recipe_dataset_index>4</attribute:recipe_dataset_index>
+    <attribute:reference_dataset>ERA-20C</attribute:reference_dataset>
+    <attribute:short_name>psl</attribute:short_name>
+    <attribute:standard_name>air_pressure_at_mean_sea_level</attribute:standard_name>
+    <attribute:start_year>1950</attribute:start_year>
+    <attribute:tier>3</attribute:tier>
+    <attribute:timerange>1950/2010</attribute:timerange>
+    <attribute:type>reanaly</attribute:type>
+    <attribute:units>Pa</attribute:units>
+    <attribute:variable_group>psl</attribute:variable_group>
+    <attribute:version>1</attribute:version>
+    <preprocessor:extract_region>{'start_latitude': 20, 'end_latitude': 90, 'start_longitude': 0, 'end_longitude': 359}</preprocessor:extract_region>
+    <preprocessor:extract_season>{'season': 'mam'}</preprocessor:extract_season>
+    <preprocessor:load>{'callback': 'default'}</preprocessor:load>
+    <preprocessor:regrid>{'target_grid': '1x1', 'lon_offset': False, 'lat_offset': False, 'scheme': 'linear'}</preprocessor:regrid>
+    <preprocessor:remove_supplementary_variables>{}</preprocessor:remove_supplementary_variables>
+    <preprocessor:save>{'compress': False, 'filename': PosixPath('/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc')}</preprocessor:save>
+  </prov:entity>
+  <prov:entity prov:id="file:/scratch/yanchun/ESGF/obsdata/Tier3/ERA-20C/OBS6_ERA-20C_reanaly_1_Amon_psl_190001-201012.nc">
+    <attribute:Conventions>CF-1.6</attribute:Conventions>
+    <attribute:NCO>netCDF Operators version 5.1.5 (Homepage = http://nco.sf.net, Code = http://github.com/nco/nco)</attribute:NCO>
+    <attribute:history>Thu Apr 13 15:43:04 2023: ncatted -a long_name,psl,m,c,Sea Level Pressure OBS6_ERA-20C_reanaly_1_Amon_psl_190001-201012.nc
+Thu Apr 13 15:42:37 2023: ncatted -a standard_name,psl,m,c,air_pressure_at_mean_sea_level OBS6_ERA-20C_reanaly_1_Amon_psl_190001-201012.nc
+Thu Apr 13 15:42:28 2023: ncrename -v latitude,lat -v longitude,lon OBS6_ERA-20C_reanaly_1_Amon_psl_190001-201012.nc
+Thu Apr 13 15:42:08 2023: ncrename -d latitude,lat -d longitude,lon OBS6_ERA-20C_reanaly_1_Amon_psl_190001-201012.nc
+Thu Apr 13 15:41:59 2023: ncrename -v sp,psl OBS6_ERA-20C_reanaly_1_Amon_psl_190001-201012.nc
+Wed Jun 30 12:54:39 2021: ncpdq psl_mon_1900_2010.nc ../psl_mon_1900_2010.nc
+Wed Jun 30 12:53:20 2021: ncrcat psl_1900.nc psl_1901.nc psl_1902.nc psl_1903.nc psl_1904.nc psl_1905.nc psl_1906.nc psl_1907.nc psl_1908.nc psl_1909.nc psl_1910.nc psl_1911.nc psl_1912.nc psl_1913.nc psl_1914.nc psl_1915.nc psl_1916.nc psl_1917.nc psl_1918.nc psl_1919.nc psl_1920.nc psl_1921.nc psl_1922.nc psl_1923.nc psl_1924.nc psl_1925.nc psl_1926.nc psl_1927.nc psl_1928.nc psl_1929.nc psl_1930.nc psl_1931.nc psl_1932.nc psl_1933.nc psl_1934.nc psl_1935.nc psl_1936.nc psl_1937.nc psl_1938.nc psl_1939.nc psl_1940.nc psl_1941.nc psl_1942.nc psl_1943.nc psl_1944.nc psl_1945.nc psl_1946.nc psl_1947.nc psl_1948.nc psl_1949.nc psl_1950.nc psl_1951.nc psl_1952.nc psl_1953.nc psl_1954.nc psl_1955.nc psl_1956.nc psl_1957.nc psl_1958.nc psl_1959.nc psl_1960.nc psl_1961.nc psl_1962.nc psl_1963.nc psl_1964.nc psl_1965.nc psl_1966.nc psl_1967.nc psl_1968.nc psl_1969.nc psl_1970.nc psl_1971.nc psl_1972.nc psl_1973.nc psl_1974.nc psl_1975.nc psl_1976.nc psl_1977.nc psl_1978.nc psl_1979.nc psl_1980.nc psl_1981.nc psl_1982.nc psl_1983.nc psl_1984.nc psl_1985.nc psl_1986.nc psl_1987.nc psl_1988.nc psl_1989.nc psl_1990.nc psl_1991.nc psl_1992.nc psl_1993.nc psl_1994.nc psl_1995.nc psl_1996.nc psl_1997.nc psl_1998.nc psl_1999.nc psl_2000.nc psl_2001.nc psl_2002.nc psl_2003.nc psl_2004.nc psl_2005.nc psl_2006.nc psl_2007.nc psl_2008.nc psl_2009.nc psl_2010.nc psl_mon_1900_2010.nc
+Wed Jun 30 12:51:05 2021: ncpdq -U psl_1900.nc temp/psl_1900.nc
+2021-06-30 09:52:45 GMT by grib_to_netcdf-2.22.0: grib_to_netcdf /data/scratch/20210630-0950/00/_mars-webmars-public-svc-green-007-6fe5cac1a363ec1525f54343b6cc9fd8-shIRX2.grib -o /data/scratch/20210630-0950/30/_grib2netcdf-webmars-public-svc-green-003-6fe5cac1a363ec1525f54343b6cc9fd8-CWW0oC.nc -utime</attribute:history>
+    <attribute:nco_openmp_thread_number>1</attribute:nco_openmp_thread_number>
+  </prov:entity>
+  <prov:agent prov:id="author:Andela, Bouwe">
+    <attribute:email>b.andela@esciencecenter.nl</attribute:email>
+    <attribute:github>bouweandela</attribute:github>
+    <attribute:institute>NLeSC, Netherlands</attribute:institute>
+    <attribute:orcid>https://orcid.org/0000-0001-9005-8940</attribute:orcid>
+  </prov:agent>
+  <prov:activity prov:id="software:esmvaltool==2.8.0"/>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="task:map/script1"/>
+    <prov:trigger prov:ref="recipe:recipe_cbf.yml"/>
+    <prov:starter prov:ref="software:esmvaltool==2.8.0"/>
+  </prov:wasStartedBy>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="task:map/psl"/>
+    <prov:trigger prov:ref="recipe:recipe_cbf.yml"/>
+    <prov:starter prov:ref="software:esmvaltool==2.8.0"/>
+  </prov:wasStartedBy>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/eof_perc_OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.txt"/>
+    <prov:agent prov:ref="author:No maintainer available"/>
+  </prov:wasAttributedTo>
+  <prov:activity prov:id="task:map/script1"/>
+  <prov:entity prov:id="recipe:recipe_cbf.yml">
+    <attribute:description>Example recipe that calculate and plot the Common Base Function.</attribute:description>
+    <attribute:references>['acknow_project']</attribute:references>
+  </prov:entity>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="recipe:recipe_cbf.yml"/>
+    <prov:agent prov:ref="author:Andela, Bouwe"/>
+  </prov:wasAttributedTo>
+  <prov:wasDerivedFrom>
+    <prov:generatedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/eof_perc_OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.txt"/>
+    <prov:usedEntity prov:ref="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/preproc/map/psl/OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.nc"/>
+    <prov:activity prov:ref="task:map/script1"/>
+  </prov:wasDerivedFrom>
+  <prov:agent prov:id="author:No maintainer available">
+    <attribute:institute>Unseen University</attribute:institute>
+  </prov:agent>
+  <prov:activity prov:id="task:map/psl"/>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="recipe:recipe_cbf.yml"/>
+    <prov:agent prov:ref="project:DLR project ESMVal"/>
+  </prov:wasAttributedTo>
+  <prov:entity prov:id="file:/projects/NS2345K/www/diagnostics/esmvaltool/yanchun/tmp/recipe_cbf_20230524_112437/work/map/script1/eof_perc_OBS6_ERA-20C_reanaly_1_Amon_psl_1950-2010.txt">
+    <attribute:caption>Average Sea Level Pressure between 1950 and 2010 according to ERA-20C.</attribute:caption>
+    <attribute:domains>('global',)</attribute:domains>
+    <attribute:plot_types>('zonal mean',)</attribute:plot_types>
+    <attribute:quickplot>{'plot_type': 'pcolormesh', 'cmap': 'RdBu'}</attribute:quickplot>
+    <attribute:realms>('atmosphere',)</attribute:realms>
+    <attribute:references>['NICEST-2']</attribute:references>
+    <attribute:script>script1</attribute:script>
+    <attribute:script_file>~/projects/NICEST2/diag_scripts/cbf/diag_cbfs.py</attribute:script_file>
+    <attribute:statistics>('mean',)</attribute:statistics>
+    <attribute:themes>('physics',)</attribute:themes>
+  </prov:entity>
+  <prov:agent prov:id="project:DLR project ESMVal"/>
+</prov:document>
