@@ -1,0 +1,18 @@
+# ESMValTool
+# recipe_mydiag.yml
+
+documentation:
+  title:
+    An example recipe
+  description:
+    An example recipe created for the ESMValTool Workshop
+  authors:
+    - unmaintained
+  maintainer:
+    - unmaintained
+
+
+diagnostics:
+  diag_name:
+    description: "my test diagnostic script"
+    scripts: null
