@@ -1,0 +1,73 @@
+# ESMValTool
+# recipe_my_personal_diagnostic.yml
+
+documentation:
+  title:
+    An example recipe
+  description:
+    An example recipe created for the ESMValTool Workshop
+  authors:
+    - unmaintained
+  maintainer:
+    - unmaintained
+
+datasets:
+#- {dataset: bcc-csm1-1, project: CMIP5, mip: Amon, exp: historical, ensemble: r2i1p1, grid: gn}
+#- {dataset: CanESM2, project: CMIP5, mip: Amon, exp: historical, ensemble: r1i1p1, grid: gn}
+#- {dataset: BCC-ESM1, project: CMIP6, mip: Amon, exp: historical, ensemble: r1i1p1f1, grid: gn}
+ - {dataset: NorESM2-LM, project: CMIP6, mip: Amon, exp: historical, ensemble: r1i1p1f1, grid: gn}
+ - {dataset: EC-Earth3, project: CMIP6, mip: Amon, exp: historical, ensemble: r1i1p1f1, grid: gr}
+
+preprocessors:
+  mypp_map:
+    regrid: &regrid_setting
+      target_grid: 1x1
+      scheme: linear
+    climate_statistics:
+      operator: mean
+      period: full
+    convert_units:
+      units: degrees_C
+  mypp_ts:
+    regrid:
+      <<: *regrid_setting
+      #target_grid: 1x1
+      #scheme: linear  
+    area_statistics:
+      operator: mean
+    annual_statistics:
+      operator: mean
+    convert_units:
+      units: degrees_C
+
+diagnostics:
+  map:
+    description: "my test diagnostic script"
+    variables:
+      tas_map:
+        short_name: tas
+        preprocessor: mypp_map
+        mip: Amon
+        start_year: 2000
+        end_year: 2014
+    scripts:
+      myscript:
+        script: ~/esmvaltool_workshop/mydiag.py
+        quickplot:
+          plot_type: pcolormesh
+          cmap: Reds
+  timeseries:
+    description: "my test diagnostic script"
+    variables:
+      tas_ts:
+        short_name: tas
+        preprocessor: mypp_ts
+        mip: Amon
+        start_year: 1970
+        end_year: 2014
+    scripts:
+      myscript:
+        script: ~/esmvaltool_workshop/mydiag.py
+        quickplot:
+          plot_type: plot
+
