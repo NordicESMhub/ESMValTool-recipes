@@ -39,4 +39,6 @@ preprocessors:
 diagnostics:
   diag_name:
     description: "my test diagnostic script"
-    scripts: null
+    scripts:
+      myscript:
+        script: ~/esmvaltool_workshop/mydiag.py
