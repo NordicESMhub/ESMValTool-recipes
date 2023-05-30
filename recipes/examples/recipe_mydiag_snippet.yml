@@ -37,8 +37,27 @@ preprocessors:
       units: degrees_C
 
 diagnostics:
-  diag_name:
+  map:
     description: "my test diagnostic script"
+    variables:
+      tas_map:
+        short_name: tas
+        preprocessor: mypp_map
+        mip: Amon
+        start_year: 2000
+        end_year: 2014
+    scripts:
+      myscript:
+        script: ~/esmvaltool_workshop/mydiag.py
+  timeseries:
+    description: "my test diagnostic script"
+    variables:
+      tas_ts:
+        short_name: tas
+        preprocessor: mypp_ts
+        mip: Amon
+        start_year: 1970
+        end_year: 2014
     scripts:
       myscript:
         script: ~/esmvaltool_workshop/mydiag.py
