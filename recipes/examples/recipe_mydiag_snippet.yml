@@ -11,7 +11,9 @@ documentation:
   maintainer:
     - unmaintained
 
-
+datasets:
+ - {dataset: NorESM2-LM, project: CMIP6, mip: Amon, exp: historical, ensemble: r1i1p1f1, grid: gn}
+ - {dataset: EC-Earth3, project: CMIP6, mip: Amon, exp: historical, ensemble: r1i1p1f1, grid: gr}
 diagnostics:
   diag_name:
     description: "my test diagnostic script"
