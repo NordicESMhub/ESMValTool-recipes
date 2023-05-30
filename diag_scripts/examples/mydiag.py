@@ -3,7 +3,6 @@ import logging
 from pathlib import Path
 from pprint import pformat
 
-# import libraries for logging
 from esmvaltool.diag_scripts.shared import run_diagnostic, group_metadata
 
 import iris
