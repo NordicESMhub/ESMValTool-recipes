@@ -50,6 +50,9 @@ diagnostics:
         mip: Amon
         start_year: 2000
         end_year: 2014
+    additional_datasets:
+      #- {dataset: NCEP, project: OBS, type: reanaly, mip: Amon, version: 1, tier: 2, start_year: 2000, end_year: 2004}
+      - {dataset: HadCRUT5, project: OBS, type: analysis, mip: Amon, version: 1, tier: 2, start_year: 2000, end_year: 2004}
     scripts:
       myscript:
         script: ~/esmvaltool_workshop/mydiag.py
@@ -65,6 +68,9 @@ diagnostics:
         mip: Amon
         start_year: 1970
         end_year: 2014
+    additional_datasets:
+      #- {dataset: NCEP, project: OBS, type: reanaly, mip: Amon, version: 1, tier: 2, start_year: 2000, end_year: 2004}
+      - {dataset: HadCRUT5, project: OBS, type: analysis, mip: Amon, version: 1, tier: 2, start_year: 2000, end_year: 2004}
     scripts:
       myscript:
         script: ~/esmvaltool_workshop/mydiag.py
